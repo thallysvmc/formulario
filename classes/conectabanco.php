@@ -1,0 +1,15 @@
+<?php
+    class conectabanco{
+        public static function pegarConexao(){
+            $conexao = new PDO("mysql:host=localhost;
+                                    dbname=form",
+                                    "root",
+                                    "");
+
+            $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conexao->exec("SET CHARACTER SET utf8");
+            
+            return $conexao;
+        }
+    }
+?>
